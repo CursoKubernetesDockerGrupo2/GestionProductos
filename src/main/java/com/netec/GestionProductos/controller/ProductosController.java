@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/productos")
@@ -23,8 +24,17 @@ public class ProductosController {
         return ResponseEntity.status(HttpStatus.CREATED).body(guardarProducto);
     }
 
-    @GetMapping("/listar")
+    @GetMapping()
     public List<Producto> listar(){
         return productosService.list();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> listarPorId(@PathVariable Integer id){
+        Optional<Producto> productoOptional = productosService.listById(id);
+        if(productoOptional.isPresent()){
+            return ResponseEntity.ok(productoOptional.get());
+        }
+        return ResponseEntity.notFound().build();
     }
 }
