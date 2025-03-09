@@ -22,7 +22,20 @@
 @REM Apache Maven Wrapper startup batch script, version 3.3.2
 @REM
 @REM Optional ENV vars
-@REM   MVNW_REPOURL - repo url base for downloading maven distribution
+@REM   MVNW_REPOURL - repo url base for do# Utilizar una imagen base de Java (ajusta la versión si es necesario).
+FROM openjdk:21-jdk-slim
+
+# Crear un directorio para la aplicación.
+WORKDIR /app
+
+# Copiar el archivo JAR generado al contenedor.
+COPY target/ms_clients-0.0.1-SNAPSHOT.jar app.jar
+
+# Exponer el puerto que usa la aplicación.
+EXPOSE 9095
+
+# Comando para ejecutar la aplicación.
+ENTRYPOINT ["java", "-jar", "app.jar"]wnloading maven distribution
 @REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
 @REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output
 @REM ----------------------------------------------------------------------------
