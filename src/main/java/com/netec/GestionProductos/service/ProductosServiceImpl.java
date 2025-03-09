@@ -4,6 +4,9 @@ import com.netec.GestionProductos.entities.Producto;
 import com.netec.GestionProductos.repository.ProductosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class ProductosServiceImpl implements ProductosService{
@@ -13,5 +16,11 @@ public class ProductosServiceImpl implements ProductosService{
     @Override
     public Producto save(Producto producto) {
         return productosRepository.save(producto);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> list() {
+        return (List<Producto>) productosRepository.findAll();
     }
 }
