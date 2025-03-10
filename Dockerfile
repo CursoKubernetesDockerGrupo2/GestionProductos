@@ -5,7 +5,7 @@ FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # Copiar el archivo JAR generado al contenedor.
-COPY target/ms_clients-0.0.1-SNAPSHOT.jar app.jar
+COPY target/GestionProductos-0.0.1-SNAPSHOT.jar app.jar
 
 # Exponer el puerto que usa la aplicación.
 EXPOSE 9095
