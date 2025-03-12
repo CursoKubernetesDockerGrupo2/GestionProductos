@@ -37,4 +37,15 @@ public class ProductosController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity <Void> eliminarProducto(@PathVariable Integer id) {
+        Optional<Producto> productoOptional = productosService.listById(id);
+        if (productoOptional.isPresent()){
+            productosService.delete(id);
+            return ResponseEntity.noContent().build();
+
+        }
+        return ResponseEntity.notFound().build();
+    }
 }

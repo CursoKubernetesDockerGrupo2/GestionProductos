@@ -9,4 +9,6 @@ public interface ProductosService {
     Producto save(Producto producto);
     List<Producto> list();
     Optional<Producto> listById(Integer id);
+    void delete (Integer id);
+
 }

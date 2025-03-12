@@ -29,4 +29,9 @@ public class ProductosServiceImpl implements ProductosService{
     public Optional<Producto> listById(Integer id) {
         return productosRepository.findById(id);
     }
+
+    @Override
+    public void delete (Integer id) {
+        productosRepository.deleteById(id);
+    }
 }
