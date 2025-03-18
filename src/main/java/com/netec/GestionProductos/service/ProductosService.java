@@ -10,5 +10,6 @@ public interface ProductosService {
     List<Producto> list();
     Optional<Producto> listById(Integer id);
     void delete (Integer id);
+    Producto updateProducto (Integer id, Producto producto);
 
 }
