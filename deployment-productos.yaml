@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gestionproductos
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gestionproductos
+  template:
+    metadata:
+      labels:
+        app: gestionproductos
+    spec:
+      containers:
+        - name: gestionproductos
+          image: hsaenz21/ms-productos_proy:V3
+          ports:
+            - containerPort: 9095
+          command: ["sh", "-c", "while true; do sleep 30; done"]
