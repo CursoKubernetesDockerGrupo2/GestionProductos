@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gestionproductos
-          image: hsaenz21/ms-productos_proy:V3
+          image: francy01/ms-productos-pf:v1
           ports:
             - containerPort: 9095
           command: ["sh", "-c", "while true; do sleep 30; done"]
