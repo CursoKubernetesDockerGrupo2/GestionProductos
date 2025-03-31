@@ -1,20 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: gestionproductos
   name: gestionproductos
+  namespace: pfinal
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: gestionproductos
+  strategy: {}
   template:
     metadata:
       labels:
         app: gestionproductos
     spec:
       containers:
-        - name: gestionproductos
-          image: francy01/ms-productos-pf:v1
-          ports:
-            - containerPort: 9095
-          command: ["sh", "-c", "while true; do sleep 30; done"]
+      - image: francy01/ms-productos-pf:v1
+        name: ms-productos-pf
+        ports:
+        - containerPort: 9095
