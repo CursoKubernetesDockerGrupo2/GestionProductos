@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: gestionproductos1
+  name: gestionproductos
   namespace: pfinal
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -14,6 +14,6 @@ spec:
          pathType: Prefix
          backend:
           service:
-            name: gestionproductos1
+            name: gestionproductos
             port:
               number: 9095
