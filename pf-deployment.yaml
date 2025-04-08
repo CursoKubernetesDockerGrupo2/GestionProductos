@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pf-app
+  namespace: pfinal-g2
+spec:
+  replicas: 2                  
+  selector:
+    matchLabels:
+      app: pf-app
+  template:
+    metadata:
+      labels:
+        app: pf-app
+    spec:
+      containers:
+      - name: pf-app
+        image: francy01/ms-productos-pf:v1
+        ports:
+        - containerPort: 9095
