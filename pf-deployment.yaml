@@ -17,4 +17,4 @@ spec:
       - name: pf-app
         image: francy01/ms-productos-pf:v1
         ports:
-        - containerPort: 9095
+        - containerPort: 7654
