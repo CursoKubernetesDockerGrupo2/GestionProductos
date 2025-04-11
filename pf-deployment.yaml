@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: pf-app
-        image: francy01/ms-productos-pf:v1
+        image: hsaenz21/ms-productos-pf:v1
         ports:
         - containerPort: 7654
