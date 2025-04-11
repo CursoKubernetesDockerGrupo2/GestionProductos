@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/GestionProductos-0.0.1-SNAPSHOT.jar app.jar
 
 # Exponer el puerto que usa la aplicación.
-EXPOSE 9095
+EXPOSE 7654
 
 # Comando para ejecutar la aplicación.
 ENTRYPOINT ["java", "-jar", "app.jar"]
