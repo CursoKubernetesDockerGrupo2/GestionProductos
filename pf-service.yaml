@@ -8,5 +8,5 @@ spec:
     app: pf-app
   ports:
   - port: 80
-    targetPort: 9095
+    targetPort: 7654
   type: ClusterIP
